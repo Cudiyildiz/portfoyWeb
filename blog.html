@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cudi Yıldız</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/logo.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cudi Yıldız</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars" style="color: aliceblue;"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html#hero">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#yetkinliklerim">Yetkinliklerim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#packages">Projelerim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="blog-header-section">
+        <div class="container">
+            <div class="row">
+                <!-- Main Title -->
+                <div class="col-lg-8">
+                    <h1 class="main-title">Blog Yazılarım</h1>
+                    <p>Teknoloji, yazılım ve kişisel deneyimlerim hakkında yazılar</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card project-card" data-id="1">
+                                    <img src="image/flutter.png" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Flutter</h5>
+                                        <p class="card-text">Kendi Yolculuğum: Flutter ile Geliştirme Serüvenim</p>
+                                        <a class="link" href="detay.html?id=1">Devamını oku</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card project-card" data-id="2">
+                                    <img src="image/html.png" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HTML ve CSS</h5>
+                                        <p class="card-text">Web Geliştirme Serüvenim: HTML ve CSS ile İlk Adımlar</p>
+                                        <a class="link" href="#">Devamını oku</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card project-card" data-id="2">
+                                    <img src="image/veritabanı.png" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Veritabanaları</h5>
+                                        <p class="card-text">Web ve mobil uygulama geliştirmede, verilerin doğru..</p>
+                                        <a class="link" href="#">Devamını oku</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Latest Posts -->
+                <div class="col-lg-4">
+                    <div class="latest-posts">
+                        <h3 class="latest-posts-title">Son Yazılar</h3>
+                        <!-- Latest Post Item 1 -->
+                        <div class="latest-post-item">
+                            <img src="image/flutter.png" alt="Latest Post" class="latest-post-img">
+                            <div class="latest-post-content">
+                                <h4>Flutter Serüvenim</h4>
+                                <span class="latest-post-date">18 Ocak 2024</span>
+                            </div>
+                        </div>
+                        <!-- Latest Post Item 2 -->
+                        <div class="latest-post-item">
+                            <img src="image/html.png" alt="Latest Post" class="latest-post-img">
+                            <div class="latest-post-content">
+                                <h4>HTML ve CSS Serüvenim</h4>
+                                <span class="latest-post-date">15 Ocak 2024</span>
+                            </div>
+                        </div>
+                        <!-- Latest Post Item 3 -->
+                        <div class="latest-post-item">
+                            <img src="image/veritabanı.png" alt="Latest Post" class="latest-post-img">
+                            <div class="latest-post-content">
+                                <h4>Veritabanları</h4>
+                                <span class="latest-post-date">12 Ocak 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Cards Section -->
+    <section class="blog-cards-section">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Card 1 -->
+                <div class="col-lg-4 col-md-6 blog-container">
+                    <article class="blog-card">
+                        <img src="https://coderspace-storage-prod.s3.eu-central-1.amazonaws.com/media/cache/11/e2/11e2a4cc526e96263ad2b05739054c22.webp" alt="Blog Post" class="blog-image">
+                        <div class="blog-content">
+                            <h2 class="blog-title">Siber Güvenlik Açıkları Nedir & En Yaygın Güvenlik Açıkları</h2>
+                            <p class="blog-excerpt">Siber Güvenlik Açıkları Nedir?Bir şirketin iç kontrol, sistem prosedürleri veya bilgi sistemlerindek...</p>
+                        </div>
+                        <div class="blog-footer">
+                            <a href="https://coderspace.io/blog/siber-guvenlik-aciklari-nedir/" class="read-more">Devamını Oku</a>
+                            <span class="text-muted">20.09.2024</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-lg-4 col-md-6 blog-container">
+                    <article class="blog-card">
+                        <img src="https://coderspace-storage-prod.s3.eu-central-1.amazonaws.com/media/cache/7e/8b/7e8b43fa7a84b21733feb73ef9439cb6.webp" alt="Blog Post" class="blog-image">
+                        <div class="blog-content">
+                            <h2 class="blog-title">10 Popüler Visual Studio Code Eklentisi</h2>
+                            <p class="blog-excerpt">Visual Studio Code, Microsoft tarafından sağlanan popüler açık kaynaklı kod düzenleyicilerinden biridir.</p>
+                        </div>
+                        <div class="blog-footer ">
+                            <a href="https://coderspace.io/blog/10-populer-visual-studio-code-eklentisi/" class="read-more">Devamını Oku</a>
+                            <span class="text-muted">05.09.2024</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-lg-4 col-md-6 blog-container">
+                    <article class="blog-card">
+                        <img src="https://coderspace-storage-prod.s3.eu-central-1.amazonaws.com/media/cache/2a/e7/2ae7a80baad9f787dbe412de47c2fc55.webp" alt="Blog Post" class="blog-image">
+                        <div class="blog-content">
+                            <h2 class="blog-title">Yapay Zekanın Tarihi | Dünden Bugüne Yapay Zeka</h2>
+                            <p class="blog-excerpt">Yapay zeka, günlük hayatta kullanmayanlar için film yapımlarına ya da bilim kurgu kitaplarına özgü...</p>
+                        </div>
+                        <div class="blog-footer">
+                            <a href="https://coderspace.io/blog/yapay-zekanin-tarihi-dunden-bugune-yapay-zeka/" class="read-more">Devamını Oku</a>
+                            <span class="text-muted">30.05.2024</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-center pt-3">
+        <div class="row mb-3">
+            <div class="col-6 text-center">
+                <h1>Cudi Yıldız</h1>
+            </div>
+            <div class="col-6">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin fa-2x social-links"></i></a>
+                    <a href="#"><i class="fab fa-github fa-2x social-links" ></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x social-links"></i></a>
+                </div> 
+            </div>
+        </div>
+            <p style="margin: 0; padding: 0;">&copy; 2024 Cudi Yıldız. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

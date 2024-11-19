@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+ul {
+    list-style-type: disc !important; /* Varsayılan işaret türünü ayarlar */
+    padding-left: 20px;   /* Liste işaretleri için boşluk bırakır */
+}
+:root{
+    --arka-plan: #25254d;
+}
+body {
+    background-color: var(--arka-plan);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/*Navbar Start*/
+.navbar-expand-lg{
+    background-color: #303030;
+}
+.custom-navbar {
+    z-index: 1030; 
+    width: 90%;
+    margin-top: 12px; 
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 5px;
+    box-shadow: 0 10px 12px rgba(9, 115, 141, 0.8);
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+.navbar-brand:hover{
+    color: #5ce1e6;
+}
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.4rem;
+    margin-right: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #5ce1e6;
+}
+
+.navbar-toggler {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-nav .nav-item .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 4px; 
+    background-color: #8b8b8b; 
+}
+/*Navbar End*/
+.section {
+    padding: 60px 0;
+}
+.hero {
+    padding-top: 60px;
+    background: linear-gradient(90deg, #7a3cf4, #5ce1e6); /* Gradyan renkleri */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+/*Section Hakkımda Start*/
+.hakkimda{
+    margin-bottom: 4rem;
+    width: 50vh;
+    display: inline-block;
+    padding: 0;
+}
+.text-container {
+    max-width: 600px;
+}
+#projectCarousel{
+    padding: 5rem;
+}
+.description {
+    max-width: 600px;
+}
+.resim{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.resim img{
+    vertical-align: middle;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 2rem;
+}
+/*Section Hakkımda End*/
+.card{
+    border-radius: 0.7rem;
+}
+
+/*Section Yetkinliklerim Start*/
+.contact-form input, .contact-form textarea {
+    background-color: #1f4287;
+    border: none;
+    color: #fff;
+}
+.progress {
+    height: 35px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    transition: width 4s;
+    background-color: #1f4287;
+}
+.yetkinlik-img {
+    height: 50vh;
+    border-radius: 1rem;
+}
+.carousel-item{
+    height: 50%;
+}
+.html-skill {
+    width: 95%;
+    background-color: #ff5733; /* HTML için özel renk */
+}
+
+.css-skill {
+    width: 75%;
+    background-color: #3498db; /* CSS için özel renk */
+}
+
+.javascript-skill {
+    width: 60%;
+    background-color: #f1c40f; /* JavaScript için özel renk */
+}
+
+.flutter-skill {
+    width: 70%;
+    background-color: #6c5ce7; /* Flutter için özel renk */
+}
+
+.canva-skill {
+    width: 90%;
+    background-color: #00b894; /* Canva için özel renk */
+}
+
+.python-skill {
+    width: 50%;
+    background-color: #636e72; /* Python için özel renk */
+}
+/*Section Yetkinliklerim Start*/
+/*Section Projelerim Start*/
+.card-title, .card-text, .github {
+    color: #000000;
+}
+.link {
+    position: relative;
+    z-index: 1100;
+    text-decoration: none;
+    color: #5656d1;
+}
+.proje-container{
+    height: auto;
+}
+.proje-yazi{
+    font-size: 1.1rem;
+}
+.project-detail{
+    padding-top: 5rem;
+}
+@media (max-width: 991px) and (min-width: 832px) {
+    #col-card {
+        width: 500px;
+    }
+   .carousel-inner .row-icerik{
+        justify-content: center !important;
+    }
+}
+/*Section Projelerim End*/
+
+.carousel-inner img {
+    max-height: 50vh;
+    object-fit: contain;
+}
+.btn-custom {
+    background-color: #000000;
+    color: #fff;
+    border-radius: 50px;
+    width: 20vh;
+}
+@media (max-width: 991px) {
+   .card-bosluk{
+    padding-top: 2rem;
+   }
+}
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 120px; /* Mobil görünüm için */
+    }
+    .display-1 {
+        font-size: calc(1.625rem + 4.5vw);
+        font-weight: 300;
+        line-height: 1.2;
+        font-size: 2rem;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .container{
+        display: inline; 
+    }
+    .container1{
+        display: inline;
+        padding: 3rem;
+    }
+    .yetkinlik-img{
+        height: 40vh;
+        border-radius: 1rem;
+    }
+    .text-container,
+    .resim{
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .resim img {
+        max-width: 90%;
+    }
+    .yetkinlik{
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    /*İletişim responsive tasarım*/
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+    
+    .container-iletisim{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .blog-header-section {
+        padding: 60px 0 20px 0;
+    }
+    
+    .latest-posts {
+        margin-bottom: 2rem;
+    }
+
+    .blog-card {
+        margin-bottom: 20px;
+    }
+}
+/*İletişim Css*/
+.contact-section{
+    margin-top: 10rem;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+.container-iletisim{
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+/* Sosyal Medya Linkleri */
+.social-links {
+    text-align: center;
+    padding-left: 10px;
+    color: #fdfdfd;
+}
+.social-links:hover {
+    color: #94b7dd;
+}
+
+/*Blog sayfası*/
+.blog-header-section {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+}
+
+.main-title {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Latest Posts Sidebar */
+.latest-posts {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.latest-posts-title {
+    color: darkcyan;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.latest-post-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.latest-post-item:last-child {
+    border-bottom: none;
+}
+
+.latest-post-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.latest-post-content h4 {
+    color:black;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.latest-post-date {
+    color: black;
+    font-size: 0.875rem;
+}
+
+/* Blog Cards Section */
+.blog-cards-section {
+    padding: 40px 0;
+}
+.blog-container{
+    overflow-y: hidden;
+}
+.blog-card {
+    background: #fff;
+    border-radius: 12px;
+    height: 100%;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-title {
+    color: black;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.blog-excerpt {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+.img-flutter{
+    border-radius: 2rem;
+    height: auto;
+}
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.read-more {
+    background-color: blue;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.read-more:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .blog-header-section {
+        padding: 60px 0 20px 0;
+    }
+    
+    .latest-posts {
+        margin-bottom: 1rem;
+    }
+
+    .blog-card {
+        margin-bottom: 2rem;
+    }
+}
