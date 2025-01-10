@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Sayfası</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet">
+    <style>
+        .blog-card {
+            transition: transform 0.3s;
+            cursor: pointer;
+            height: 100%;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .pagination {
+            margin-top: 2rem;
+        }
+        #blogContent {
+            display: none;
+        }
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        pre {
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div id="blogCards">
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer"></div>
+            <nav aria-label="Blog sayfaları">
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
+        </div>
+
+        <div id="blogContent" class="container">
+            <button class="btn btn-primary mb-4" onclick="showBlogCards()">← Geri Dön</button>
+            <div id="contentArea"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-dart.min.js"></script>
+    <script>
+        const blogPosts = [
+            {
+                id: 1,
+                title: "Flutter ile Mobil Uygulama Geliştirme",
+                image: "https://via.placeholder.com/350x200",
+                summary: "Flutter kullanarak mobil uygulama geliştirme sürecine genel bakış.",
+                content: `
+                    <h1>Flutter ile Mobil Uygulama Geliştirme</h1>
+                    <img src="https://via.placeholder.com/800x400" alt="Flutter Development" class="content-image">
+                    <p>Flutter, Google tarafından geliştirilen açık kaynaklı bir UI yazılım geliştirme kitidir.</p>
+                    
+                    <h2>Basit Bir Flutter Uygulaması</h2>
+                    <pre><code class="language-dart">
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('İlk Flutter Uygulamam'),
+        ),
+        body: Center(
+          child: Text('Merhaba Dünya!'),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+                `
+            },
+            {
+                id: 2,
+                title: "State Management in Flutter",
+                image: "https://via.placeholder.com/350x200",
+                summary: "Flutter'da state yönetimi teknikleri ve best practices.",
+                content: `
+                    <h1>State Management in Flutter</h1>
+                    <img src="https://via.placeholder.com/800x400" alt="State Management" class="content-image">
+                    <p>State management, Flutter uygulamalarının önemli bir parçasıdır.</p>
+                    
+                    <h2>Provider Örneği</h2>
+                    <pre><code class="language-dart">
+class Counter with ChangeNotifier {
+  int _count = 0;
+  int get count => _count;
+
+  void increment() {
+    _count++;
+    notifyListeners();
+  }
+}</code></pre>
+                `
+            },
+            {
+                id: 3,
+                title: "Flutter Widgets",
+                image: "https://via.placeholder.com/350x200",
+                summary: "En çok kullanılan Flutter widget'ları ve kullanım örnekleri.",
+                content: `
+                    <h1>Flutter Widgets</h1>
+                    <img src="https://via.placeholder.com/800x400" alt="Flutter Widgets" class="content-image">
+                    <p>Widget'lar, Flutter uygulamalarının yapı taşlarıdır.</p>
+                    
+                    <h2>Custom Widget Örneği</h2>
+                    <pre><code class="language-dart">
+                     class CustomButton extends StatelessWidget {
+                    final String text;
+                    final VoidCallback onPressed;
+
+                   CustomButton({
+                    required this.text,
+                    required this.onPressed,
+                 });
+
+                  @override
+               Widget build(BuildContext context) {
+                 return ElevatedButton(
+                    onPressed: onPressed,
+                  child: Text(text),
+                     );
+                 }
+                   }</code></pre>
+                `
+            }
+        ];
+
+        const postsPerPage = 3;
+        let currentPage = 1;
+
+        function showBlogCards() {
+            document.getElementById('blogCards').style.display = 'block';
+            document.getElementById('blogContent').style.display = 'none';
+        }
+
+        function showBlogContent(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            document.getElementById('blogCards').style.display = 'none';
+            document.getElementById('blogContent').style.display = 'block';
+            document.getElementById('contentArea').innerHTML = post.content;
+            Prism.highlightAll();
+        }
+
+        function displayPosts(page) {
+            const container = document.getElementById('cardContainer');
+            container.innerHTML = '';
+            
+            const startIndex = (page - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const postsToShow = blogPosts.slice(startIndex, endIndex);
+
+            postsToShow.forEach(post => {
+                const col = document.createElement('div');
+                col.className = 'col';
+                col.innerHTML = `
+                    <div class="card blog-card" onclick="showBlogContent(${post.id})">
+                        <img src="${post.image}" class="card-img-top" alt="${post.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${post.title}</h5>
+                            <p class="card-text">${post.summary}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+
+            updatePagination(page);
+        }
+
+        function updatePagination(currentPage) {
+            const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                li.innerHTML = `
+                    <a class="page-link" href="#" onclick="displayPosts(${i})">${i}</a>
+                `;
+                pagination.appendChild(li);
+            }
+        }
+
+        window.onload = () => displayPosts(1);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
