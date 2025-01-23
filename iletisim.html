@@ -42,18 +42,19 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <form class="contact-form">
+                    <!-- EmailJS ile entegre edilmiş form -->
+                    <form class="contact-form" id="contact-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">İsim</label>
-                            <input type="text" class="form-control" id="name" placeholder="Adınızı girin" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı girin" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="E-posta adresinizi girin" required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Mesaj</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Mesajınızı yazın" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Mesajınızı yazın" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Mesajını Gönder</button>
                     </form>
